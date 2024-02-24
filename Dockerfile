@@ -6,7 +6,11 @@ COPY . ./
 
 RUN CGO_ENABLED=0 go build -o gumtree-auto 
 
+
 FROM chromedp/headless-shell:latest
+LABEL org.opencontainers.image.source="https://github.com/mcoops/gumtree-auto"
+
+
 ENV USERNAME=username
 ENV PASSWORD=password
 
